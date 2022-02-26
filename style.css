@@ -73,3 +73,17 @@ select {
   }
 }
 
+header {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+#search {
+  margin-left: auto;
+  height: 2rem;
+  min-width: 20ch;
+  max-width: 35ch;
+  flex: 1;
+}
