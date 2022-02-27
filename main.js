@@ -65,9 +65,6 @@ function displayBook(book, bookNum) {
 
 function removeBook(bookNum) {
     myLibrary.splice(bookNum, 1);
-    /*let littleOne = document.querySelector(`[data-book-num='${bookNum}'`);*/
-    /* I'm sorry littleOne */
-    /*main.removeChild(littleOne);*/
     displayBooks();
 }
 
