@@ -14,15 +14,15 @@
         <input type="search" name="search" id="search">
         <a href="#"><img src="imgs/search_black_24dp.svg" alt="search icon"></a>
         <a href="#"><img src="imgs/account_circle_black_24dp.svg" alt="account icon"></a>
-        <button class="add-book">+</button>
+        <button class="show-form">+</button>
+        <form action="" method="get">
+            <div><label for="book-title">Title: </label><input type="text" name="book-title" id="book-title"></div>
+            <div><label for="book-author">Author: </label><input type="text" name="book-author" id="book-author"></div>
+            <div><label for="book-pages">Pages: </label><input type="text" name="book-pages" id="book-pages"></div>
+            <div><label for="book-read">Read?</label><input type="checkbox" name="book-read" id="book-read"></div>
+            <button type="submit">Add Book</button>
+        </form>
     </header>
-    <form action="" method="get">
-        <div><label for="book-title">Title: </label><input type="text" name="book-title" id="book-title"></div>
-        <div><label for="book-author">Author: </label><input type="text" name="book-author" id="book-author"></div>
-        <div><label for="book-pages">Pages: </label><input type="text" name="book-pages" id="book-pages"></div>
-        <div><label for="book-read">Read?</label><input type="checkbox" name="book-read" id="book-read"></div>
-        <button type="submit">Add Book</button>
-    </form>
     <main>
         <div class="card">
             <div class="title">Harry Potter</div>
