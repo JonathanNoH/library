@@ -177,6 +177,7 @@ main {
   grid-auto-rows: 250px;
   gap: 1rem;
   padding: 1rem;
+  padding-left: 5rem;
   position: relative;
 }
 
