@@ -25,8 +25,19 @@ function displayBooks(lob) {
 
 let main = document.querySelector("main");
 let showFormButton = document.querySelector(".show-form");
-let form = document.querySelector("form");
 
 showFormButton.addEventListener('click', () => {
     form.classList.toggle("reveal");
+});
+
+
+const form = document.getElementById('add-book-form');
+const title = form.elements['book-title'];
+const author = form.elements['book-author'];
+const pages = form.elements['book-pages'];
+const read = form.elements['book-read'];
+
+form.addEventListener('reset', (e) => {
+    let isRead = read.value.checked ? true: false;
+    addBookToLibrary(title.value, author.value, pages.value, isRead);
 });
