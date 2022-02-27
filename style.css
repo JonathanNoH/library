@@ -129,6 +129,9 @@ button.show-form {
   left: 1rem;
   top: 6rem;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 35ch auto;
+  gap: 1rem;
 }
 
 form {
@@ -138,7 +141,23 @@ form {
 form.reveal {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
+
+  background-color: var(--accent-color);
+  padding: 1rem;
+  box-shadow: 5px 5px 5px var(--black);
+
+  grid-column: 1;
+  grid-row: 1;
+}
+
+form.reveal label {
+  color: var(--black);
+}
+
+form.reveal div:nth-of-type(-n+3) {
+  align-self: end;
 }
 
 
