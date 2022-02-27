@@ -82,12 +82,10 @@ select {
   --accent-color: #50B2C0;
   */
 
-  --black: #080705;
-  --off-white: #F1E8B8;
-  --darker-white: #F9E784;
-  --main-color: #550C18;
-  --main-color-light: #E58F65;
-  --accent-color: #5B7553;
+  --black: #30323D;
+  --off-white: #F1F7ED;
+  --main-color: #588B8B;
+  --accent-color: #B33951;
 
 }
 
@@ -103,7 +101,8 @@ header {
   padding: 1rem;
   gap: 1rem;
   align-items: center;
-  background-color: var(--main-color-light);
+  background-color: var(--main-color);
+  box-shadow: 10px 10px 8px #888888;
 }
 
 #search {
@@ -124,16 +123,15 @@ main {
 }
 
 .card {
-  background-color: var(--main-color-light);
+  background-color: var(--main-color);
   display: grid;
   place-content: center;
   gap: 1rem;
   border-radius: 0.5rem;
-  border-left: 0.5rem solid var(--accent-color);
-  
+  box-shadow: 5px 5px 10px var(--accent-color);
 }
 
 .card div {
-  color: var(--off-white);
+  color: var(--black);
   font-weight: 600;
 }
