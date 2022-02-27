@@ -47,9 +47,11 @@ function displayBook(book) {
 let main = document.querySelector("main");
 let showFormButton = document.querySelector(".show-form");
 
-showFormButton.addEventListener('click', () => {
-    form.classList.toggle("reveal");
-});
+showFormButton.addEventListener('click', toggleForm);
+
+function toggleForm() {
+    form.classList.toggle('reveal');
+}
 
 
 const form = document.getElementById('add-book-form');
@@ -62,5 +64,6 @@ form.addEventListener('reset', (e) => {
     let isRead = read.checked ? true : false;
     addBookToLibrary(title.value, author.value, pages.value, isRead);
     displayBook(myLibrary[myLibrary.length - 1]);
+    toggleForm();
 });
 
