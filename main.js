@@ -19,6 +19,7 @@ function addBookToLibrary(title, author, pages, isRead) {
 }
 
 function displayBooks() {
+    clearMain();
     if (myLibrary.length === 0) return;
     let bookNum = 0;
     console.log(myLibrary);
@@ -36,7 +37,7 @@ function displayBook(book, bookNum) {
     /* set up remove button */
     card.setAttribute('data-book-num', bookNum);
     let removeButton = document.createElement("button");
-    let buttonNode = document.createTextNode("-");
+    let buttonNode = document.createTextNode("remove");
     removeButton.appendChild(buttonNode);
     removeButton.classList.add('remove-button');
     removeButton.addEventListener('click', (e) => {
@@ -103,7 +104,6 @@ showFormButton.addEventListener('click', toggleForm);
 form.addEventListener('reset', (e) => {
     let isRead = read.checked ? true : false;
     addBookToLibrary(title.value, author.value, pages.value, isRead);
-    clearMain();
     displayBooks();
     toggleForm();
 });
