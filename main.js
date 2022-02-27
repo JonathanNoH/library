@@ -36,7 +36,7 @@ function displayBook(book, bookNum) {
     /* set up remove button */
     card.setAttribute('data-book-num', bookNum);
     let removeButton = document.createElement("button");
-    let buttonNode = document.createTextNode("remove");
+    let buttonNode = document.createTextNode("X");
     removeButton.appendChild(buttonNode);
     removeButton.classList.add('remove-button');
     removeButton.addEventListener('click', (e) => {

@@ -96,6 +96,8 @@ body {
   grid-template-rows: max-content 1fr;
 }
 
+/* HEADER */
+
 header {
   grid-column: 1 / -1;
   display: flex;
@@ -109,20 +111,54 @@ header {
   top: 0;
 }
 
-button.show-form {
+#search {
+  margin-left: auto;
+  height: 2rem;
+  min-width: 20ch;
+  max-width: 35ch;
+  flex: 1;
+  background-color: var(--off-white);
+}
+
+/* BUTTONS */
+
+button.show-form,
+.remove-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3rem;
   padding: 0.5rem;
-  width: 3rem;
-  height: 3rem;
-  font-size: 2rem;
   border: none;
   background-color: var(--accent-color);
   color: var(--off-white);
-  box-shadow: 5px 5px 5px var(--black);
 }
+
+button.show-form {
+  width: 3rem;
+  height: 3rem;
+  box-shadow: 5px 5px 5px var(--black);
+  border-radius: 3rem;
+  font-size: 2rem;
+}
+
+button.remove-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: 600;
+}
+
+.read-button {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--off-white);
+}
+
+/* FORM */
 
 .form-container {
   position: fixed;
@@ -130,7 +166,7 @@ button.show-form {
   top: 6rem;
   z-index: 1;
   display: grid;
-  grid-template-columns: 35ch auto;
+  grid-template-columns: auto auto;
   gap: 1rem;
 }
 
@@ -143,6 +179,7 @@ form.reveal {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: 35ch;
 
   background-color: var(--accent-color);
   padding: 1rem;
@@ -160,15 +197,7 @@ form.reveal div:nth-of-type(-n+3) {
   align-self: end;
 }
 
-
-#search {
-  margin-left: auto;
-  height: 2rem;
-  min-width: 20ch;
-  max-width: 35ch;
-  flex: 1;
-  background-color: var(--off-white);
-}
+/* MAIN */
 
 main {
   background-color: var(--off-white);
@@ -184,7 +213,8 @@ main {
 .card {
   background-color: var(--main-color);
   display: grid;
-  place-content: center;
+  place-items: center;
+  padding: 2rem 0;
   gap: 1rem;
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px var(--black);
@@ -210,14 +240,4 @@ main {
 
 main div.helper {
   font-weight: 700;
-}
-
-.remove-button {
-  background-color: var(--accent-color);
-  border: none;
-  color: var(--off-white);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border-radius: 0.5rem;
 }
