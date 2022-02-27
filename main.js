@@ -63,7 +63,7 @@ function displayBook(book, bookNum) {
 }
 
 function removeBook(bookNum) {
-    /* fixes bug where removing all books adds two books on next add */
+    /* guard clause that fixes bug where removing all books adds two books on next add */
     if (myLibrary.length <= 1) {
         myLibrary = [];
     }
