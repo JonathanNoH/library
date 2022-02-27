@@ -16,9 +16,9 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 let myLibrary = [];
 
-function displayBooks(lob) {
-    if (lob.length === 0) return;
-    for (let book of lob) {
+function displayBooks() {
+    if (myLibrary.length === 0) return;
+    for (let book of myLibrary) {
         console.log(book);
     }
 }
@@ -38,6 +38,8 @@ const pages = form.elements['book-pages'];
 const read = form.elements['book-read'];
 
 form.addEventListener('reset', (e) => {
-    let isRead = read.value.checked ? true: false;
+    let isRead = read.checked ? true : false;
     addBookToLibrary(title.value, author.value, pages.value, isRead);
+    displayBooks();
 });
+
