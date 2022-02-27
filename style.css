@@ -193,3 +193,15 @@ main {
   color: var(--black);
   font-weight: 600;
 }
+
+.title::before {
+  content: "Title: ";
+}
+
+.author::before {
+  content: "Author: "
+}
+
+.pages::before {
+  content: "Pages: "
+}
