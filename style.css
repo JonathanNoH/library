@@ -188,6 +188,7 @@ main {
   gap: 1rem;
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px var(--black);
+  position: relative;
 }
 
 .card div {
@@ -209,4 +210,14 @@ main {
 
 main div.helper {
   font-weight: 700;
+}
+
+.remove-button {
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--off-white);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0.5rem;
 }
