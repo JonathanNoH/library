@@ -206,3 +206,7 @@ main {
 .pages::before {
   content: "Pages: "
 }
+
+main div.helper {
+  font-weight: 700;
+}
