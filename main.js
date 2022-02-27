@@ -20,7 +20,28 @@ function displayBooks() {
     if (myLibrary.length === 0) return;
     for (let book of myLibrary) {
         console.log(book);
+        displayOneBook(book);
     }
+}
+
+function displayBook(book) {
+    let card = document.createElement("div");
+    card.classList.add('card')
+    for (let property in book) {
+        if (property == 'info') break;
+        let div = document.createElement("div");
+        div.classList.add(`${property}`);
+        let node;
+        if (property == `isRead`) {
+            const str = book[property] ? "Read" : "Not Read Yet";
+            node = document.createTextNode(str);
+        } else {
+            node = document.createTextNode(book[property]);
+        }
+        div.appendChild(node);
+        card.appendChild(div);
+    }
+    main.appendChild(card);
 }
 
 let main = document.querySelector("main");
@@ -40,6 +61,6 @@ const read = form.elements['book-read'];
 form.addEventListener('reset', (e) => {
     let isRead = read.checked ? true : false;
     addBookToLibrary(title.value, author.value, pages.value, isRead);
-    displayBooks();
+    displayBook(myLibrary[myLibrary.length - 1]);
 });
 
