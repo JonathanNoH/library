@@ -21,8 +21,8 @@ function addBookToLibrary(title, author, pages, isRead) {
 function displayBooks() {
     if (myLibrary.length === 0) return;
     let bookNum = 0;
+    console.log(myLibrary);
     for (let book of myLibrary) {
-        console.log(book);
         displayBook(book, bookNum);
         bookNum += 1;
     }
@@ -63,6 +63,10 @@ function displayBook(book, bookNum) {
 }
 
 function removeBook(bookNum) {
+    /* fixes bug where removing all books adds two books on next add */
+    if (myLibrary.length <= 1) {
+        myLibrary = [];
+    }
     myLibrary.splice(bookNum, 1);
     let littleOne = document.querySelector(`[data-book-num='${bookNum}'`);
     /* I'm sorry littleOne */
