@@ -22,3 +22,11 @@ function displayBooks(lob) {
         console.log(book);
     }
 }
+
+let main = document.querySelector("main");
+let showFormButton = document.querySelector(".show-form");
+let form = document.querySelector("form");
+
+showFormButton.addEventListener('click', () => {
+    form.classList.toggle("reveal");
+});
