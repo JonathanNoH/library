@@ -7,8 +7,8 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
-Book.prototype.info = function() {
-return `${this.title} by ${this.author}, ${this.pages} pages, ${isRead ? "read" : "not read yet"}`;
+Book.prototype.toggle = function() {
+    this.isRead = this.isRead ? false : true; 
 }
 
 /* FUNCTIONS */
@@ -22,7 +22,6 @@ function displayBooks() {
     clearMain();
     if (myLibrary.length === 0) return;
     let bookNum = 0;
-    console.log(myLibrary);
     for (let book of myLibrary) {
         displayBook(book, bookNum);
         bookNum += 1;
@@ -44,9 +43,19 @@ function displayBook(book, bookNum) {
         removeBook(bookNum);
     })
 
+    /* set up read button */
+
+    let readButton = document.createElement('button');
+    let readButtonNode = document.createTextNode("change");
+    readButton.appendChild(readButtonNode);
+    readButton.classList.add('read-button');
+    readButton.addEventListener('click', (e) => {
+        toggleRead(bookNum);
+    });
+
     /* set up book properties */
     for (let property in book) {
-        if (property == 'info') break;
+        if (property == 'toggle') break;
         let div = document.createElement("div");
         div.classList.add(`${property}`);
         let node;
@@ -59,6 +68,7 @@ function displayBook(book, bookNum) {
         div.appendChild(node);
         card.appendChild(div);
     }
+    card.appendChild(readButton);
     card.appendChild(removeButton);
     main.appendChild(card);
 }
@@ -68,6 +78,10 @@ function removeBook(bookNum) {
     displayBooks();
 }
 
+function toggleRead(bookNum) {
+    myLibrary[bookNum].toggle();
+    displayBooks();
+}
 
 function toggleForm() {
     form.classList.toggle('reveal');
