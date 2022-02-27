@@ -29,9 +29,21 @@ function displayBooks() {
 }
 
 function displayBook(book, bookNum) {
+    /* create card */
     let card = document.createElement("div");
     card.classList.add('card');
-    card.setAttribute('data-book-num', bookNum);   
+
+    /* set up remove button */
+    card.setAttribute('data-book-num', bookNum);
+    let removeButton = document.createElement("button");
+    let buttonNode = document.createTextNode("-");
+    removeButton.appendChild(buttonNode);
+    removeButton.classList.add('remove-button');
+    removeButton.addEventListener('click', (e) => {
+        removeBook(bookNum);
+    })
+
+    /* set up book properties */
     for (let property in book) {
         if (property == 'info') break;
         let div = document.createElement("div");
@@ -46,6 +58,7 @@ function displayBook(book, bookNum) {
         div.appendChild(node);
         card.appendChild(div);
     }
+    card.appendChild(removeButton);
     main.appendChild(card);
 }
 
