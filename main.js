@@ -1,14 +1,15 @@
 /* BOOK OBJECT CONSTRUCTOR */
 
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-}
-
-Book.prototype.toggle = function() {
-    this.isRead = this.isRead ? false : true; 
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+    toggle() {
+        this.isRead = this.isRead ? false : true;
+    }
 }
 
 /* FUNCTIONS */
