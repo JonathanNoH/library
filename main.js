@@ -21,10 +21,11 @@ class Book {
 const main = document.querySelector('main');
 const showFormButton = document.querySelector('.show-form');
 const form = document.getElementById('add-book-form');
-const titleDOM = form.elements['book-title'];
-const authorDOM = form.elements['book-author'];
-const pagesDOM = form.elements['book-pages'];
-const readDOM = form.elements['book-read'];
+
+const titleDOM = document.getElementById('book-title');
+const authorDOM = document.getElementById('book-author');
+const pagesDOM = document.getElementById('book-pages');
+const readDOM = document.getElementById('book-read');
 
 const myLibrary = [];
 
@@ -118,9 +119,12 @@ function toggleRead(bookNum) {
 
 showFormButton.addEventListener('click', toggleForm);
 
-form.addEventListener('reset', () => {
-  const isRead = !!readDOM.checked;
-  addBookToLibrary(titleDOM.value, authorDOM.value, pagesDOM.value, isRead);
-  displayBooks();
-  toggleForm();
+form.addEventListener('submit', (event) => {
+  if (titleDOM.validity.valid && authorDOM.validity.valid && pagesDOM.validity.valid) {
+    const isRead = !!readDOM.checked;
+    addBookToLibrary(titleDOM.value, authorDOM.value, pagesDOM.value, isRead);
+    displayBooks();
+    toggleForm();
+  }
+  event.preventDefault();
 });
